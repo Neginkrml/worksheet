@@ -218,3 +218,34 @@ console.log(toplamSipariş("Zafer", 1500, 5)) // console.log yazmayı unuttuğun
 
 //ÖDEVE BENZER ÇALIŞMALAR ÇIKTISI(GÖREV ÖRNEKLERİ CHATGPT DEN ALINMIŞTIR)
 
+// TASK-1
+
+function calculateBookOrder(bookQuantity, pricePerBook) {
+    totalBookPrice = bookQuantity * pricePerBook
+    return `You ordered ${bookQuantity} books worth ${totalBookPrice}  credits!`
+}
+console.log(calculateBookOrder(5, 150));
+console.log(calculateBookOrder(3, 200)); 
+
+
+// TASK-2
+
+function getElectronicsDeliveryCost(country, price, deliveryFee) { 
+    totalShippingPrice = price * deliveryFee
+    return `Shipping to ${country} will cost ${totalShippingPrice} credits`
+}
+console.log(getElectronicsDeliveryCost("USA", 1000, 50)); 
+console.log(getElectronicsDeliveryCost("Canada", 800, 40)); 
+
+// TASK-3
+
+function getButtonWidth(content, padding, border) {
+    const contentWidth = parseFloat(content)
+    const paddingWidth = parseFloat(padding)
+    const borderWidth = parseFloat(border)
+    const totalWidth = contentWidth + paddingWidth * 2 + borderWidth * 2
+    return totalWidth
+}
+console.log(getButtonWidth("300px", "10px", "5px")); 
+console.log(getButtonWidth("150px", "8px", "4px")); 
+
