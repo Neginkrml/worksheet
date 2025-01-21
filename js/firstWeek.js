@@ -80,14 +80,141 @@ console.log(ağaçElemanSayısı)
 
 const ürün = "çörekotlu sabun"
 const sonİndeks = ürün.length-1
-console.log(ürün[4])
+console.log(ürün[4]) // köşeli parantezle indeks sayısını belirtiyoruz
 console.log(ürün[sonİndeks])
 console.log(sonİndeks)
 
 const courseTopic = "JavaScript essentials";
 const courseTopicLength = courseTopic.length;
 const firstElement = courseTopic[0];
-const lastElement = courseTopic[courseTopic.length - 1]; // Burayla ilgili soru sorulacak
+const lastElementSayı = courseTopic.length - 1;
+const lastElementHarf = courseTopic[courseTopic.length - 1];
 console.log("Konu Uzunluğu:", courseTopicLength);
 console.log("İlk Karakter:", firstElement);
-console.log("Son Karakter:", lastElement);
+console.log("Son Karakter:", lastElementHarf);
+console.log("Son Karakter İndexi:", lastElementSayı);
+
+
+// 2. GÜN ÇALIŞMALARI
+
+const a = 86;
+const b = 25;
+console.log(a > b);
+console.log(b < a);
+console.log(a >= b);
+console.log(b <= a);
+console.log(b > a);
+console.log(b >= a);
+
+const yaşı = 18
+const reşit = yaşı >= 18
+console.log(reşit) //True değeri döndürüyor reşit diye yazdırmıyor
+
+const doğruŞifre = "sarıkalpliyastık"
+const girilenŞifre = "benimsaçımvar"
+const isValid = girilenŞifre === doğruŞifre;
+console.log(isValid)//false döndürecek
+
+console.log(Number("86")); //86
+console.log(Number(true)); //1
+console.log(Number(null)); //0
+console.log(Number("elma")) //NaN
+console.log(Number("34px")) //NaN
+
+console.log("41" - 21);
+console.log(74 - true);
+console.log(51 - "elma");
+console.log(16 - null);
+
+console.log(Number.parseInt("15.24cm")) //15
+console.log(Number.parseInt("2m31")) //2
+console.log(Number.parseInt("m431")) // NaN
+
+console.log(Number.parseFloat("31.42santim")) //31.42
+console.log(Number.parseFloat("1m32")) //1
+console.log(Number("mr3146")) //NaN
+
+const değer = "53.94mm"
+const numerical = Number.parseFloat(değer)
+const secondNumerical =Number.parseInt(değer)
+console.log(numerical) // 53.94
+console.log(secondNumerical) // 53
+
+console.log(Math.floor(1.5)) // 1
+console.log(Math.ceil(1.5)) // 2
+console.log(Math.floor(3.8)) 
+console.log(Math.ceil(3.8)) 
+console.log(Math.round(1.7))
+console.log(Math.round(10.2))
+console.log(Math.max(25, 31, 56, 98, 42))
+console.log(Math.min(25, 31, 56, 98, 42))
+
+//_______________________________________________________________________
+
+function kıyafetler() {
+    const etek = 1;
+    const kazak = 2;
+    const pantolon = 5;
+    const toplamKıyafetPuanı = etek + kazak + pantolon;
+    return `Dolapta ${toplamKıyafetPuanı} puanlık kıyafet mevcut`;
+}
+console.log(kıyafetler());
+
+function selamla() {
+    console.log("Merhaba, İşletmemize Hoşgeldiniz!")
+}
+selamla(); //Fonksiyon aslında böyle çağrılır
+
+function carpmaIslemi(x, y, z) {
+    console.log(`Sonuç: ${x * y * z}`)
+}
+carpmaIslemi(2, 3, 5) //burada fonkisyonu yanlış çağırdın
+carpmaIslemi(4, 8, 12)
+carpmaIslemi(2, 6, 3)
+
+function sepet(a, b, c) {
+    const toplamMeyve = a + b + c
+    console.log(`Sepette ${toplamMeyve} adet meyve vardır.`)
+}
+sepet(5, 8, 21)
+sepet(3, 6, 9)
+
+function ogrenciler(kızlar, erkekler) {
+    const toplam = kızlar + erkekler;
+    return toplam;
+}
+const toplamOgrenciler = ogrenciler(12, 22)
+console.log(toplamOgrenciler)
+
+function ekip(yöneticiler, çalışanlar) {
+    const bütün = yöneticiler + çalışanlar;
+    return bütün;                    //burada return olmasaydı console.log da cevap undefined olarak dönerdi 
+}
+const toplamEkip = ekip(2, 15)
+console.log(toplamEkip)
+
+
+function toplama(a, b) {
+    console.log("returnden önce yazılan cümle ve bu sebeple gözükecek")
+    return a + b
+    console.log("Bu kod returnden sonra yazıldı ve bu sebeple gözükmeyecek")
+}
+console.log(toplama(2, 6))
+
+function bölme(a, b, c) {
+    console.log(`Sonuç ${a / b / c}`)
+}
+console.log("Bölmeden önceki log")
+bölme(8, 2, 5)
+console.log("Bölmeden sonraki log")
+
+function toplamSipariş(isim, ücret, adet) {
+    const toplamUcret = ücret * adet
+    return `Sayın ${isim}, ücreti ${ücret}TL olan ${adet} adet kapının toplam fiyatı ${toplamUcret} TL'dir.`
+}
+console.log(toplamSipariş("Zafer", 1500, 5)) // console.log yazmayı unuttuğun için kod çalışmıyordu
+
+//_______________________________________________________________________________________________________
+
+//ÖDEVE BENZER ÇALIŞMALAR ÇIKTISI(GÖREV ÖRNEKLERİ CHATGPT DEN ALINMIŞTIR)
+
