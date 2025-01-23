@@ -271,4 +271,53 @@ const trimmedInput = input.trim();
 console.log(trimmedInput); // "JavaScript is awesome!"
 console.log(input); // " JavaScript is awesome!    "
 
-// son iki kod örbeğine çalış
+// son iki kod örneğine çalış
+
+//______________________________________________________________________________________
+
+let sayı = 0
+while (sayı < 5) {
+    console.log(`Değer: ${sayı}`)
+    sayı += 1
+}
+
+let kayıtlıMüşteri = 4
+const otelKapasitesi = 10
+while (kayıtlıMüşteri < otelKapasitesi) {
+    console.log(`Müşteri sayısı : ${kayıtlıMüşteri} Boş yer var. Yeni müşteri alınabilir.`)
+    kayıtlıMüşteri += 1
+}
+
+function calculateTotal(number) {
+    let count = 1
+    let total = 0
+    while (count <= number) {
+        total += count
+        count += 1
+    }
+    return(total)
+}
+console.log(calculateTotal(5))
+
+let count = 0;
+
+do {
+	console.log(`Count: ${count}`); // do while a bak
+	count += 1;
+} while (count < 5);
+
+
+for (i = 55; i < 85; i += 10){
+    console.log(i)
+}
+
+function calculateTotall(nummber) {
+  let totall = 0;
+
+  for (let l = 1; l <= nummber; l += 1) {
+    totall += l;
+  }
+
+  return totall;
+}
+console.log(calculateTotall(25))
