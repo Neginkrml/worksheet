@@ -321,3 +321,4 @@ function calculateTotall(nummber) {
   return totall;
 }
 console.log(calculateTotall(25))
+
