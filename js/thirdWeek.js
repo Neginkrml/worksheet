@@ -212,3 +212,111 @@ function createArrayOfNumbers(min, max) {
   return numbers;
 }
 console.log(createArrayOfNumbers(29, 34))
+
+//__________________________________________________________________________________________________________________
+
+const yüzük = ["Tektaş", "Ametist Yüzük", "Alyans"]
+for (let s = 0; s < yüzük.length; s += 1){
+    console.log(yüzük[s])
+}
+
+function mücevher(kolye) {
+    let toplam = 1
+    for (k = 1; k < kolye.length; k += 1){
+        toplam += kolye[k]
+    }
+    return toplam;
+}
+console.log(mücevher(["Burma", "Yıldız", "Yunus", "Yonca"]))
+
+function değerliTaşlar(taş, miktar) {
+    const taşlar = [];
+    for (let t = 0; t <= miktar; t += 1) {
+        if (t % 2 === 0) {
+            taşlar.push(t);
+        }
+    }
+    return taşlar;
+}
+console.log(değerliTaşlar("Ametist", 8));
+
+const bileklik = ["su yolu bileklik", "pandora bileklik", "altın bileklik"]
+console.log(bileklik.includes("pandora bileklik"))
+
+if (bileklik.includes("su yolu bileklik")) {
+    console.log("Bu ürün dizide bulunmaktadır")
+} else {
+    console.log("Bu ürün dizide bulunmamaktadır")
+}
+
+const mevsimler = ["İlkbahar", "Yaz", "Sonbahar", "Kış"]
+for (const mevsim of mevsimler){
+    console.log(mevsim)
+}
+
+function aylar(aylarSırası) {
+    // Ayları diziye dönüştür
+    const aylarDizisi = aylarSırası.split(", ");
+    
+    // Dizideki ayların toplamını döndür
+    return aylarDizisi.length;
+}
+
+console.log(aylar("January, February, March, April, May, June")); // Çıktı: 6
+
+// function calculateTotalPrice(order) {
+//   let total = 0;
+
+//   for (const orderItem of order) {
+//     total += orderItem;
+//   }
+
+//   return total;
+// }
+
+function kitap(a, b) {
+    console.log(arguments)
+    return a + b
+}
+kitap(2 + 5)
+kitap(10 + 15)
+
+function multiply() {
+    let totaal = 1
+    for (const arg of arguments) {
+        totaal *= arg
+    }
+    return totaal
+}
+console.log(multiply(1, 2, 3, 4));
+console.log(multiply(5));
+
+function foo() {
+  // args değişkeni tüm argümanların tam bir dizisini içerecektir
+  const args = Array.from(arguments);
+	return args.join("-");
+}
+foo(1, 2, 3); // Return "1-2-3"              // çalışmadı
+
+function cartN() {
+    const args = Array.from(arguments);
+    return args.join("_")
+}
+cartN("Gumball", "Darwin", "Anais")            // çalışmadı
+
+function greet(username = "Guest") {
+    console.log (`Hello ${username}`)
+}
+greet("İsmet")
+
+function counnt(from, to, step = 1) {
+    console.log(`from: ${from}, to: ${to}, step: ${step}`)
+    for (let l = from; l <= to; i += step){
+    }
+}
+counnt(25, 13, 45)
+
+function calculateTax(amount, taxRate = 0.2) {
+  return amount * taxRate;
+}
+console.log(calculateTax(200, 0.2))
