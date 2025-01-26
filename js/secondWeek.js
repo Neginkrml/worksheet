@@ -396,3 +396,68 @@ console.log(getShippingCost("China")); // "Shipping to China will cost 100 credi
 console.log(getShippingCost("Chile")); // "Shipping to Chile will cost 250 credits"
 console.log(getShippingCost("Jamaica")); // "Shipping to Jamaica will cost 120 credits"
 console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your country"
+
+///___________________________________________________________________________________________________________________________________________________________________
+
+//İLK ÖDEV ÖRNEĞİ
+
+function calculateTransaction(units, costPerUnit, totalCredits) {
+    const totalCost = units * costPerUnit;
+    if (totalCost > totalCredits) {
+        return "Insufficient funds!";
+    }
+    return `You ordered ${units} droids worth ${totalCost} credits!`;
+}
+console.log(calculateTransaction(3, 200, 1000)); // "You ordered 3 droids worth 600 credits!"
+console.log(calculateTransaction(6, 200, 1000)); // "Insufficient funds!"
+
+
+function trimMessage(inputText, maxCharacters) {
+    if (inputText.length <= maxCharacters) {
+        return inputText;
+    } else {
+        return inputText.slice(0, maxCharacters) + "...";
+    }
+}
+
+// Test
+console.log(trimMessage("Hello world, welcome!", 12)); // "Hello world..."
+console.log(trimMessage("Short text", 20)); // "Short text"
+
+
+function detectSpam(content) {
+    const lowerCaseContent = content.toLowerCase();
+    if (lowerCaseContent.includes("spam") || lowerCaseContent.includes("sale")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(detectSpam("Limited time SALE offer!")); // true
+console.log(detectSpam("No spam here, just content")); // true
+
+
+function deliveryCostCheck(destination) {
+    let deliveryFee;
+
+    switch (destination) {
+        case "India":
+            deliveryFee = 200;
+            break;
+        case "Canada":
+            deliveryFee = 300;
+            break;
+        case "Brazil":
+            deliveryFee = 150;
+            break;
+        case "Mexico":
+            deliveryFee = 100;
+            break;
+        default:
+            return "Sorry, delivery is not available in your region";
+    }
+
+    return `Shipping to ${destination} will cost ${deliveryFee} credits`;
+}
+console.log(deliveryCostCheck("India")); // "Shipping to India will cost 200 credits"
+console.log(deliveryCostCheck("Russia")); // "Sorry, delivery is not available in your region"
