@@ -74,11 +74,11 @@ n = 35
 console.log(n)
 console.log(m)
 
-let kapı = ["Tahta Kapı", "Plastik Kapı"]  // const ile tanımladın bunlar
+let kapı = ["Tahta Kapı", "Plastik Kapı"]  
 let kapılar = kapı
 console.log(kapı)
 console.log(kapılar)
-kapı = ["Çelik Kapı", "Sokak Kapısı"]      //burada kapıyı 2. kez tanımlarken let kullandın
+kapı = ["Çelik Kapı", "Sokak Kapısı"]    
 console.log(kapı)
 console.log(kapılar)
 kapı[0] = "Cam Kapı"
