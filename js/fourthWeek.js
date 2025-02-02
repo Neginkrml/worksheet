@@ -79,7 +79,7 @@ const ev = {
     odaSayisi: 3,
     metrekare: 120,
     kat: 5,
-    lokasyon: "İstanbul, Kadıköy",
+    lokasyon: "İstanbul, Kadiköy",
     fiyat: "2.500.000 TL"
 };
 for (const key in ev) {
@@ -104,12 +104,12 @@ const cicek = {
     anlam: "Aşk ve Tutku",
     yetistigiYer: "Bahçeler, Sera Ortamlari",
 };
+
 const cicekValues = [];
 const cicekKeys = Object.keys(cicek);
 for (const key of cicekKeys) {
     cicekValues.push(cicek[key])
 };
-
 console.log(cicekKeys);
 console.log(cicekValues)
 
@@ -138,3 +138,106 @@ const telefonlar = {
         kamera: "108 MP"
     }
 };
+// for (const key in telefonlar) {
+//     console.log(telefonlar[key])
+// }
+
+const telefonlarKey = []
+const telefonlarValue = []
+for (const key in telefonlar) {
+    telefonlarKey.push(key)
+    telefonlarValue.push(telefonlar[key])
+} 
+console.log(telefonlarKey);
+console.log(telefonlarValue);
+
+//_______________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+const bina = {
+    isim: "Empire State Binasi",
+    yer: "New York, ABD",
+    yükseklik: "443.2 metre",
+    katSayisi: 102,
+    yapimYili: 1931,
+    mimar: "Shreve, Lamb & Harmon",
+    kullanimAmaci: "Ofisler, Gözlem Deckleri",
+};
+
+const binaKeys = Object.keys(bina);
+const binaValues = Object.values(bina);
+console.log(binaKeys);
+console.log(binaValues);
+
+//____________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+const mobilyaMarkalari = {
+    ikea: {
+        urunAdi: "KALLAX Raf Ünitesi",
+        malzeme: "Ahşap, Kontrplak",
+        renk: "Beyaz",
+        boyutlar: "77x147 cm",
+        kullanim: "Depolama, Dekorasyon",
+        fiyatAraligi: "Orta"
+    },
+    karacaHome: {
+        urunAdi: "Luxury Yemek Masası",
+        malzeme: "Mermer, Metal",
+        renk: "Siyah",
+        boyutlar: "160x90 cm",
+        kullanim: "Yemek Odası",
+        fiyatAraligi: "Yüksek"
+    },
+    bellona: {
+        urunAdi: "Comfort Koltuk Takımı",
+        malzeme: "Kumaş, Sünger",
+        renk: "Bej",
+        boyutlar: "3+2 Koltuk",
+        kullanim: "Oturma Odası",
+        fiyatAraligi: "Orta-Yüksek"
+    },
+};
+const markalar = [];
+const urunAdlari = [];
+const renkler = [];
+const boyutlari = [];
+const kullanimlar = [];
+const fiyatlari = [];
+for (const marka in mobilyaMarkalari) {
+    if (mobilyaMarkalari.hasOwnProperty(marka)) {
+        const urun = mobilyaMarkalari[marka];
+
+        markalar.push(marka);  // Markayı ekle
+        urunAdlari.push(urun.urunAdi);  // Ürün adını ekle
+        renkler.push(urun.renk);  // Rengi ekle
+        boyutlari.push(urun.boyutlar);  // Boyutu ekle
+        kullanimlar.push(urun.kullanim);  // Kullanım alanını ekle
+        fiyatlari.push(urun.fiyatAraligi);  // Fiyat aralığını ekle
+    }
+}
+
+console.log("Markalar:", markalar);
+console.log("Ürün Adları:", urunAdlari);
+console.log("Renkler:", renkler);
+console.log("Boyutlar:", boyutlari);
+console.log("Kullanım Alanları:", kullanimlar);
+console.log("Fiyat Aralıkları:", fiyatlari);
+
+//_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+const sacTokasi = {
+    isim: "Elmas Taşlı Saç Tokası",
+    malzeme: "Gümüş, Elmas",
+    renk: "Gümüş Rengi",
+    boyut: "5 cm",
+    tasarim: "Minimalist",
+    marka: "Swarovski"
+};
+
+const tokaMalzemesi = [];
+const tokaRengi = [];
+for (const toka of sacTokasi) {
+    tokaMalzemesi.push(toka.malzeme)
+    tokaRengi.push(toka.rengi)
+};
+console.log(tokaMalzemesi);
+console.log(tokaRengi);
