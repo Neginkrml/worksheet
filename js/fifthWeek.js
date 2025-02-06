@@ -129,18 +129,130 @@ const toplama3 = (a, b, c) => a + b + c;
 
 //________________________________________________________________________________________________________________________________________
 
-const rakamlar = [1, 2, 3, 4, 5];
-rakamlar.forEach(function (rakam,index) {
-    console.log(`${rakam} rakamının index numarası: ${index}`)
-})
+// const rakamlar = [1, 2, 3, 4, 5];
+// rakamlar.forEach(function (rakam,index) {
+//     console.log(`${rakam} rakamının index numarası: ${index}`)
+// })
 
-const rakamlar2 = [6, 7, 8, 9, 10];
-rakamlar2.forEach((rakam, index) => {
-    console.log(`${rakam} rakamının index numarası: ${index}`)
-})
-console.log("______________________________________________________________________")
+// const rakamlar2 = [6, 7, 8, 9, 10];
+// rakamlar2.forEach((rakam, index) => {
+//     console.log(`${rakam} rakamının index numarası: ${index}`)
+// })
+// console.log("______________________________________________________________________")
 
-const reqemler = [2, 4, 6, 8]
-reqemler.forEach((rakam, index) => {
-    console.log(`${rakam} rakamının index numarası: ${index}`)
-})
+// const reqemler = [2, 4, 6, 8]
+// reqemler.forEach((rakam, index) => {
+//     console.log(`${rakam} rakamının index numarası: ${index}`)
+// })
+
+//__________________________________________________________________________________________________________________________________
+
+const pureMultiply = (array, value) => {
+  const newArray = [];
+
+  array.forEach(element => {
+    newArray.push(element * value);
+  });
+
+  return newArray;
+};
+console.log(pureMultiply([2, 4, 6, 8], 2));
+
+const examp = [2, 4, 6, 8]
+const doubleExamp = pureMultiply(examp, 2) 
+console.log(examp);
+console.log(doubleExamp)
+
+const carpmaİslemi = (rakam, carpan) => {
+    const dizi = [];
+    rakam.forEach(eleman => {
+        dizi.push(eleman * carpan);
+    })
+    return dizi;
+};
+console.log(carpmaİslemi([1, 3, 5, 7], 3));
+
+//___________________________________________________________________________________________________________________________________
+function changeEven(numbers, value) {
+    const newArray = [];
+    numbers.forEach((number) => {
+        newArray.push(number % 2 === 0 ? number + value : number)
+    })
+    return newArray;
+}
+
+function bolmeİslemi(rakamlar, deger) {
+    const bolunendizi = [];
+    rakamlar.forEach((rakam) => {
+        bolunendizi.push(rakam % 2 === 0 ? rakam + deger : rakam)
+    })
+    return bolunendizi;
+}
+console.log(bolmeİslemi([10,11,20,30,40],2))
+//___________________________________________________________________________________________________________________________________
+
+const meyveler = ["elma", "nar", "ananas"];
+meyveler.forEach((oge, indeks, dizi) => {
+    console.log(`Öğe:${oge}, İndex: ${indeks}, Dizi:${dizi}`)
+});
+
+const numbers = [10, 20, 30];
+
+const squaredNumbers = numbers.map((item) => item * item)
+console.log(squaredNumbers) //map() Metodu → Yeni bir dizi döndürür
+
+const mapDeneme = numbers.map((item) => item - 2)
+console.log(mapDeneme)
+
+//______________________________________________________________________________
+
+
+const fileteredNumbers = numbers.filter((item) => item > 10)
+console.log(fileteredNumbers);      //filter() Metodu → Belirtilen koşulu sağlayan elemanları döndürür.
+
+const urunler = ["Renkli Taşlı Saç Tokası", "Elmas Taşlı Saç Tokası"];
+const harfArama = urunler.filter((item) => item.includes("n"));   // item yerine sürekli dizi ismini yazıyosun 
+console.log(harfArama);
+
+const urunİsimleri = ["Koltuk", "Kitap", "Battaniye", "Yorgan"];
+const urunBulma = urunİsimleri.filter((item) => item.includes("t"));
+console.log(urunBulma);
+
+//___________________________________________________________________________
+
+const sum = numbers.reduce((acc, item) => acc + item, 0);   //reduce() Metodu → Dizideki tüm elemanları tek bir değere indirger.
+console.log(sum); 
+
+const urunFiyatlar = [50, 60, 80, 40];
+const fiyatTopla = urunFiyatlar.reduce((acc, item) => acc + item, 0);
+console.log(fiyatTopla)
+
+const gezegenler = ["EarTh", "MaRs", "VeNus", "Jupİter"];
+const buyukGezegen = gezegenler.map(gezegen => gezegen.toUpperCase());
+const kucukGezegen = gezegenler.map(gezegen => gezegen.toLowerCase());
+console.log(buyukGezegen);
+console.log(kucukGezegen);
+
+const students = [
+  { name: "Mango", score: 83 },
+  { name: "Poly", score: 59 },
+  { name: "Ajax", score: 37 },
+  { name: "Kiwi", score: 94 },
+  { name: "Houston", score: 64 },
+];
+
+const stName = students.map(student => student.name);
+const stScore = students.map(student => student.score);
+console.log(stName);
+console.log(stScore);
+
+const studentts = [
+  { name: "Mango", courses: ["mathematics", "physics"] },
+  { name: "Poly", courses: ["science", "mathematics"] },
+  { name: "Kiwi", courses: ["physics", "biology"] },
+];
+const sttName = studentts.map((student) => student.name);
+const sttCourses = studentts.map((student) => student.courses);
+console.log(sttCourses);
+console.log(sttName);
+
