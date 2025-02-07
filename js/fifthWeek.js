@@ -189,7 +189,7 @@ function bolmeİslemi(rakamlar, deger) {
     return bolunendizi;
 }
 console.log(bolmeİslemi([10,11,20,30,40],2))
-//___________________________________________________________________________________________________________________________________
+//_________________________________________________________________________________________________
 
 const meyveler = ["elma", "nar", "ananas"];
 meyveler.forEach((oge, indeks, dizi) => {
@@ -255,4 +255,115 @@ const sttName = studentts.map((student) => student.name);
 const sttCourses = studentts.map((student) => student.courses);
 console.log(sttCourses);
 console.log(sttName);
+
+//____________________________________________________________________________________________________________________________________
+
+const values = [25, 86, 95, -32, -25, 43];
+const positiveValues = values.filter(value => value >= 0);
+console.log(positiveValues);
+const negativeValues = values.filter(value => value < 0);
+console.log(negativeValues);
+const bigValues = values.filter(values => values > 1000);
+console.log(bigValues);
+//___________________________________________________________
+ 
+const LOW_STOCK = 10;
+const HIGH_STOCK = 50;
+const products = [
+  { name: "Laptop", stock: 5 },
+  { name: "Mouse", stock: 25 },
+  { name: "Keyboard", stock: 60 },
+  { name: "Monitor", stock: 8 },
+  { name: "Printer", stock: 45 },
+];
+const best = products.filter((product) => product.stock >= HIGH_STOCK);
+const worst = products.filter((product) => product.stock < LOW_STOCK);
+const average = products.filter(
+  ({ stock }) => stock >= LOW_STOCK && stock < HIGH_STOCK
+);
+
+console.log("Yüksek Stoklu Ürünler (best):", best);
+console.log("Düşük Stoklu Ürünler (worst):", worst);
+console.log("Orta Stoklu Ürünler (average):", average);
+
+//______________________________________________________________________________________________________________________________________
+
+//find() metodu, bir dizide tek bir öğeyi bulmak istediğinizde kullanışlıdır
+
+const colorPickerOptions = [
+  { label: "red", color: "#F44336" },
+  { label: "green", color: "#4CAF50" },
+  { label: "blue", color: "#2196F3" },
+  { label: "pink", color: "#E91E63" },
+  { label: "indigo", color: "#3F51B5" },
+];
+
+console.log(colorPickerOptions.find((option) => option.label === "blue"));
+console.log(colorPickerOptions.find((option) => option.label === "pink"));
+console.log(colorPickerOptions.find((option) => option.label === "white"));
+
+//_________________________________________________________________________________________________________
+const fruits = [
+	{ name: "apple", quantity: 2 },
+	{ name: "orange", quantity: 5 },
+	{ name: "plum", quantity: 0 },
+];
+const everyFruits = fruits.every((fruit) => fruit.quantity > 0);
+console.log(everyFruits);
+
+const ciftRakamlar = [2, 4, 6, 8];
+const ciftRakamKontrol = ciftRakamlar.every((rakam) => rakam % 2 === 0);
+console.log(ciftRakamKontrol); // true
+
+//_________________________________________________________________________________________________________
+
+const fruits1 = [
+  { name: "apple", quantity: 2 }, 
+  { name: "orange", quantity: 5 }, 
+  { name: "plum", quantity: 0 },  
+];
+
+const someFruits = fruits1.some((fruiit) => fruiit.quantity > 0);
+console.log(someFruits);
+
+//_______________________________________________________________________________________________________
+
+const total = [2, 5, 6, 9, 8].reduce((prev, num) => prev + num, 0);
+console.log(total);
+
+const icindeTopla = [3, 4, 9, 7, 6].reduce((elma, rkm) => elma + rkm, 0);
+console.log(icindeTopla);
+
+//_________________________________________________________________________________________________________
+
+const studennts = [
+  { name: "Mango", score: 83 },
+  { name: "Poly", score: 59 },
+  { name: "Ajax", score: 37 },
+  { name: "Kiwi", score: 94 },
+  { name: "Houston", score: 64 },
+];
+
+const totalScoree = studennts.reduce((total, studennts) => {
+    return total + studennts.score;
+}, 0);
+const averageScoree = totalScoree + studennts.length;
+console.log(averageScoree);
+
+//___________________________________________________________________________________________________________
+
+const sayilar = [5, 9, 3, 2, 1, 7, 8, 0,4];
+const siraliSayilar = sayilar.toSorted();
+console.log(siraliSayilar);
+
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+const ascendingReleaseDates = releaseDates.toSorted();
+console.log(ascendingReleaseDates);
+
+//____________________________________________________________________________________________________________
+
+
+const ogrenci = ["Jacob", "Artemis", "Solomon", "Adrian", "Kai", "Ganymede"];
+const harflerinSiralanmasi = ogrenci.toSorted((a, b) => a.localCompare(b));
+console.log(harflerinSiralanmasi);
 
