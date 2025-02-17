@@ -1,0 +1,15 @@
+body {
+  maring: 24px;
+  padding: 0 15px;
+}
+
+.usernames li {
+  padding: 8px;
+  border: 2px dashed tomato;
+  text-transform: uppercase;
+  width: 100px;
+}
+
+.usernames li:not(:last-child) {
+  margin-bottom: 12px;
+}

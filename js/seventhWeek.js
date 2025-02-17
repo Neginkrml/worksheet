@@ -1,25 +1,42 @@
-// const button = document.querySelector(".btn");
-// const handleClick = (event) => {
-//     console.log("event:", event);
-//     console.log("event type: ", event.type);
-//     console.log("currentTarget: ", event.currentTarget);
-// }
-// button.addEventListener("click", handleClick);
+const list = document.querySelector('.usernames');
+
+// Adds an item to the end of the list
+const lastItem = document.createElement('li');
+lastItem.textContent = 'Poly';
+list.append(lastItem);
+
+// Adds an item to the beginning of the list
+const firstItem = document.createElement('li');
+firstItem.textContent = 'Ajax';
+list.prepend(firstItem);
+
+// const link = document.querySelector('.link-a');
+// link.remove();
+
+//_____________________________________________________________________________
+
+const article = document.querySelector('.article-a');
+console.log(article.innerHTML);
+
+const title = document.querySelector('.title-h');
+console.log(title.innerHTML);
+
+const text = document.querySelector('.text-p');
+console.log(text.innerHTML);
+
+const link = document.querySelector('.link-a');
+console.log(link.innerHTML);
+
+title.innerHTML = 'New and <span class="accent">improved</span> title';
+
+//_____________________________________________________________________________
+
+list.insertAdjacentHTML('afterbegin', '<li>Başa eklendi</li>');
+list.insertAdjacentHTML('beforeend', '<li>Sona eklendi</li>');
 
 
-
-
-const addListenerBtn = document.querySelector('.js-add');
-const removeListenerBtn = document.querySelector('.js-remove');
-const btn = document.querySelector(".target-btn");
+const singleBtn = document.querySelector("#single");
 const handleClick = () => {
-  console.log("click event listener callback");
-};
-addListenerBtn.addEventListener("click", () => {
-  btn.addEventListener("click", handleClick);
-  console.log("click event listener was added to btn");
-});
-removeListenerBtn.addEventListener("click", () => {
-  btn.removeEventListener("click", handleClick);
-  console.log("click event listener was removed from btn");
-});
+    console.log("click event listener callback");
+}
+singleBtn.handleClick("click", handleClick);
