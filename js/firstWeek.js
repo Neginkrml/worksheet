@@ -248,4 +248,3 @@ function getButtonWidth(content, padding, border) {
 }
 console.log(getButtonWidth("300px", "10px", "5px")); 
 console.log(getButtonWidth("150px", "8px", "4px")); 
-
