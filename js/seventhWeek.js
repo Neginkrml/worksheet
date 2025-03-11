@@ -1,131 +1,122 @@
-const todoInput = document.querySelector(".todo-input");
-const todoButton = document.querySelector(".todo-button");
-const todoList = document.querySelector(".todo-ul");
-const filterOption = document.querySelector(".filter-todo");
+const jsn = {
+  name: 'Josh',
+  weight: 175,
+  age: 30,
+  eyecolor: 'brown',
+  isHappy: true,
+  cars: ['Chevy', 'Honda'],
+  favoriteBook: {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+};
 
-document.addEventListener("DOMContentLoaded", getLocalTodos);
-todoButton.addEventListener("click", addTodo);
-todoList.addEventListener("click", deleteCheck);
-filterOption.addEventListener("change", filterTodo);
+const json = JSON.stringify(jsn);
 
-function addTodo(event) {
-    event.preventDefault();
-    const todoDiv = document.createElement("div");
-    todoDiv.classList.add("todo");
-    const newTodo = document.createElement("li");
-    newTodo.innerText = todoInput.value; 
-    newTodo.classList.add("todo-item");
-    todoDiv.appendChild(newTodo);
-    //ADDING TO LOCAL STORAGE 
-    saveLocalTodos(todoInput.value);
-    
-    const completedButton = document.createElement("button");
-    completedButton.innerHTML = '<i class="fas fa-check-circle"></li>';
-    completedButton.classList.add("complete-btn");
-    todoDiv.appendChild(completedButton);
+console.log(json);
+console.log(jsn);
 
-    const trashButton = document.createElement("button");
-    trashButton.innerHTML = '<i class="fas fa-trash"></li>';
-    trashButton.classList.add("trash-btn");
-    todoDiv.appendChild(trashButton);
-    
-    todoList.appendChild(todoDiv);
-    todoInput.value = "";
+//!  bir fonksiyonu JSON'a dönüştürmeye çalıştığınızda sonuç undefined olacaktır
+
+//? STRİNGFY-  JavaScript nesnesini json'a dönüştürür
+
+//? PARSE -yöntemi json'u alır ve onu JavaScript verilerine dönüştürür  , json'dan veri ayrıştırır
+//? JSON.parse yöntemine geçersiz JSON verildiğinde bir hata oluşturacaktır.
+
+// const data = JSON.parse('{username: "Mango"}'); // Error
+
+try {
+  // Code that may throw a runtime error
+} catch (error) {
+  // Error handling
 }
 
-function deleteCheck(e) {
-    const item = e.target;
+//? İlk olarak, try bloğu içindeki kod çalıştırılır.
+//? Hata olmadığı sürece, catch bloğu görmezden gelinir ve kontrol devam eder.
+//? try bloğunda bir hata oluşursa, çalışması durdurulur ve yürütücü catch bloğuna geçer.
 
-    if(item.classList[0] === "trash-btn") {
-        const todo = item.parentElement;
-        todo.classList.add("slide");
-
-        removeLocalTodos(todo);
-        todo.addEventListener("transitionend", function() {
-            todo.remove();
-        });
-    }
-
-    if(item.classList[0] === "complete-btn") {
-        const todo = item.parentElement;
-        todo.classList.toggle("completed");
-    }
+try {
+  const data = JSON.parse('Well, this is awkward');
+} catch (error) {
+  console.log(error.name); // "SyntaxError"
+  console.log(error.message); // Unexpected token W in JSON at position 0
 }
+console.log('✅ This is fine, we handled parsing error in try...catch');
 
-function filterTodo(e) {
-    const todos = todoList.childNodes;
-    todos.forEach(function(todo) {
-        switch(e.target.value) {
-            case "all": 
-                todo.style.display = "flex";
-                break;
-            case "completed": 
-                if(todo.classList.contains("completed")) {
-                    todo.style.display = "flex";
-                } else {
-                    todo.style.display = "none";
-                }
-                break;
-            case "incomplete":
-                if(!todo.classList.contains("completed")) {
-                    todo.style.display = "flex";
-                } else {
-                    todo.style.display = "none";
-                }
-                break;
-        }
-    });
+//! Kod, içinde geçerli bir JSON bulunmayan bir metni JSON.parse() ile dönüştürmeye çalışıyor. Bu işlem başarısız olduğu için bir hata (error) oluşuyor. try...catch bloğu sayesinde bu hata yakalanıp düzgün bir şekilde işleniyor.
+//! JSON'da tüm metinler çift tırnak (" ") içinde olmalıdır, ama burada çift tırnak yok.
+
+//! catch (error) bölümü hatayı yakalar ve hata bilgilerini konsola yazdırır. olanları bilgi içeren bir hata nesnesidir.
+//! error.name → Hatayı tanımlayan isimdir. "SyntaxError" olarak döner.
+//! error.message → Hatanın ayrıntıları hakkında bir bildirim. Hata mesajıdır. "Unexpected token W in JSON at position 0" mesajını verir.
+//! stack - Hatanın oluştuğu sırada işlev çağrılarının yığını. Hata ayıklama amacıyla kullanılır.
+
+try {
+  const zuhre = JSON.parse('Selam Ben Zühre');
+} catch (error) {
+  console.log(error.name);
+  console.log(error.message);
 }
+console.log('Zure seni seviyorum');
 
-function saveLocalTodos(todo) {
-    let todos;
-    if(localStorage.getItem("todos") === null) {
-        todos = [];
-    } else {
-        todos = JSON.parse(localStorage.getItem("todos"));
-    }
-    todos.push(todo);
-    localStorage.setItem("todos", JSON.stringify(todos));
-}
+console.log(localStorage);
+// Storage {length: 0}
 
-function getLocalTodos() {
-    let todos;
-    if(localStorage.getItem("todos") === null) {
-        todos = [];
-    } else {
-        todos = JSON.parse(localStorage.getItem("todos"));
-    }
-    todos.forEach(function(todo) {
-        const todoDiv = document.createElement("div");
-        todoDiv.classList.add("todo");
-        const newTodo = document.createElement("li");
-        newTodo.innerText = todo;
-        newTodo.classList.add("todo-item");
-        todoDiv.appendChild(newTodo);
+localStorage.setItem('ui-theme', 'light');
+localStorage.setItem('Zuhre', 'cok guzel');
 
-        const completedButton = document.createElement("button");
-        completedButton.innerHTML = '<i class="fas fa-check-circle"></li>';
-        completedButton.classList.add("complete-btn");
-        todoDiv.appendChild(completedButton);
+const settings = {
+  theme: 'dark',
+  isAuthenticated: true,
+  options: [1, 2, 3],
+};
+localStorage.setItem('settings', JSON.stringify(settings));
 
-        const trashButton = document.createElement("button");
-        trashButton.innerHTML = '<i class="fas fa-trash"></li>';
-        trashButton.classList.add("trash-btn");
-        todoDiv.appendChild(trashButton);
+const elma = {
+  renk: 'kirmizi',
+  boy: 'buyuk',
+  sayi: [1, 2, 3],
+};
+localStorage.setItem('elma', JSON.stringify(elma));
 
-        todoList.appendChild(todoDiv);
-    });
-}
+console.log(localStorage);
 
-function removeLocalTodos(todo) {
-    let todos;
-    if(localStorage.getItem("todos") === null) {
-        todos = [];
-    } else {
-        todos = JSON.parse(localStorage.getItem("todos"));
-    }
+const elmayiAl = localStorage.getItem('elma');
+console.log(elmayiAl);
 
-    const todoIndex = todo.children[0].innerText;
-    todos.splice(todos.indexOf(todoIndex), 1);
-    localStorage.setItem("todos", JSON.stringify(todos));
-}
+//!Depo içinde belirtilen anahtarla kayıt bulunmuyorsa, yöntem null değerini döndürür.
+
+const parsedElma = JSON.parse(elmayiAl);
+console.log(parsedElma);
+
+localStorage.removeItem('elma');
+console.log(localStorage.getItem('elma'));
+
+console.log(localStorage);
+
+//________________________________________________________________________________________________________________________________
+
+sessionStorage.setItem('meyve', 'ananas');
+sessionStorage.setItem(
+  'biletler',
+  JSON.stringify({ nereden: 'İstanbul', nereye: 'Ankara', adet: 2 })
+);
+sessionStorage.setItem(
+  'kitaplar',
+  JSON.stringify({ yazar: 'Victor Hugo', kitap: 'Sefiller' })
+);
+
+let kutupane = JSON.parse(sessionStorage.getItem('kitaplar'));
+console.log(kutupane);
+
+sessionStorage.removeItem('biletler');
+
+sessionStorage.clear();
+localStorage.clear();
+
+console.log(window.sessionStorage); // Storage {length: 0}
+
+//________________________________________________________________________________________________________________________________________
+
+//!  Web geliştirme araçları --- Otomasyon
