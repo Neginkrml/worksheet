@@ -134,3 +134,10 @@ select {
   background: white;
   color: rgb(112, 157, 94);
 }
+
+
+.js-start{
+   border: 1px solid black;
+   border border-radius: 5px;
+   
+}
